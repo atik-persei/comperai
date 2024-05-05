@@ -2,12 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const message = [
-  { "title": "컨벤션에 맞는 깃 커밋 메시지를 찾으세요" },
-  { "title": "커밋 메시지가 컨벤션에 맞는지 확인해보세요" }
+const commitLanguage = [
+  { "language": "en", "text": "English" },
+  { "language": "kr", "text": "Korean" },
 ]
 
 const commitType = [
@@ -16,11 +16,12 @@ const commitType = [
   { "text": "삭제", "value": "remove", "description": "기능 추가" },
   { "text": "버그", "value": "bug", "description": "기능 추가" },
   { "text": "구조 변경", "value": "refactory", "description": "기능 추가" },
-  { "text": "설정파일 벼수정", "value": "refactory", "description": "기능 추가" },
+  { "text": "설정 변경", "value": "config", "description": "기능 추가" },
   { "text": "기타", "value": "misc", "description": "기능 추가" }
 ]
 
-export default function Main() {
+export default function Main(props: {message: string} ) {
+  const message = props.message
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -35,17 +36,17 @@ export default function Main() {
   };
 
   return (
-    <div className="h-fit min-w-[360px] pb-[60px] bg-white relative mx-auto flex flex-col items-center justify-center gap-y-5">
-      <div className="w-full max-w-4xl py-[60px] flex items-center justify-between">
-        <span className="w-[330px] text-4xl font-bold leading-relaxed">컨벤션에 맞는 깃 커밋 메시지를 찾으세요</span>
-        <Image height={220} width={220} src="/rule_book.png" alt=""></Image>
+    <div className="h-[600px] min-w-[360px] pb-[60px] bg-white relative mx-auto flex flex-col items-center justify-center gap-y-5">
+      <div className="h-[600px] w-full max-w-4xl py-[60px] flex items-center justify-between">
+        <span className="w-[330px] text-4xl font-bold leading-relaxed">{message}</span>
+        <Image height={248} width={220} src="/rule_book.png" alt=""></Image>
       </div>
 
       <form className="w-full max-w-3xl py-[60px] bolder flex gap-5" onSubmit={handleSubmit}>
-        <select className="w-[52px]" name="type">
-          {commitType.map((item) => {
+        <select className="w-[82px]" name="language">
+          {commitLanguage.map((item) => {
             return(
-              <option key={uuidv4()} value={item.value}>{item.text}</option>
+              <option key={uuidv4()} value={item.language}>{item.text}</option>
             )
           })}
         </select>
