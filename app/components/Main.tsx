@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const commitLanguage = [
@@ -20,19 +20,20 @@ const commitType = [
   { "text": "기타", "value": "misc", "description": "기능 추가" }
 ]
 
-export default function Main(props: {message: string} ) {
+export default function Main(props: { message: string }) {
   const message = props.message
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const typeElement = e.currentTarget.elements.namedItem("type") as HTMLInputElement;
-    const type = typeElement ? typeElement.value : "";
 
-    const queryElement = e.currentTarget.elements.namedItem("query") as HTMLInputElement;
-    const query = queryElement ? queryElement.value : "";
+    const formData = new FormData(e.currentTarget);
+    const rawFormData = {
+      language: formData.get("language") as string,
+      query: formData.get("query") as string
+    }
 
-    router.push(`/commit?type=${encodeURIComponent(type)}&query=${encodeURIComponent(query)}`);
+    router.push(`/commit?language=${encodeURIComponent(rawFormData.language)}&query=${encodeURIComponent(rawFormData.query)}`);
   };
 
   return (
@@ -45,7 +46,7 @@ export default function Main(props: {message: string} ) {
       <form className="w-full max-w-3xl py-[60px] bolder flex gap-5" onSubmit={handleSubmit}>
         <select className="w-[82px]" name="language">
           {commitLanguage.map((item) => {
-            return(
+            return (
               <option key={uuidv4()} value={item.language}>{item.text}</option>
             )
           })}
