@@ -2,20 +2,21 @@ import dynamic from "next/dynamic";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Language from "../types/language";
 
 type RenderType = "loading" | "error"
 
 export default function Page({
   params,
-  searchParams
+  searchParams,
 }: {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  const msgType = searchParams.type;
-  const msgQuery = searchParams.query;
+  const msgLanguage = searchParams.language as Language;
+  const msgQuery = searchParams.query as string;
 
-  const renderComponent = (props:{renderType?: RenderType, renderTag?: any}) => (
+  const renderComponent = (props: { renderType?: RenderType, renderTag?: React.ReactNode }) => (
     <div className="h-[600px] min-w-[360px] mx-auto pb-[60px] bg-white relative flex flex-col items-center justify-center gap-y-5">
       {
         props.renderType == "loading" ? <span>로딩 중 입니다.</span>
@@ -26,11 +27,11 @@ export default function Page({
   );
 
   // Component type check
-  if (!(typeof msgType == "string") || !(typeof msgQuery == "string")) {
+  if (!(typeof msgLanguage == "string") || !(typeof msgQuery == "string")) {
     return (
       <>
         <Header></Header>
-        {renderComponent({renderType: "error"})}
+        {renderComponent({ renderType: "error" })}
         <Footer></Footer>
       </>
     )
@@ -38,13 +39,13 @@ export default function Page({
 
   // Component health
   const Commit = dynamic(() => import('../components/Commit'), {
-    loading: () => renderComponent({renderType: "loading"})
+    loading: () => renderComponent({ renderType: "loading" })
   });
 
   return (
     <>
       <Header></Header>
-      {renderComponent({renderTag: <Commit msgType={msgType} msgQuery={msgQuery}></Commit>})}
+      {renderComponent({ renderTag: <Commit msgLanguage={msgLanguage} msgQuery={msgQuery}></Commit> })}
       <Footer></Footer>
     </>
   );
