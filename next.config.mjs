@@ -2,6 +2,7 @@ import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrismPlus from "rehype-prism-plus";
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -15,7 +16,8 @@ const withMDX = createMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      rehypeAutolinkHeadings
+      rehypeAutolinkHeadings,
+      rehypePrismPlus
     ],
   },
 });
