@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Language from "../types/language";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import Language from "@/app/types/language";
 
 type RenderType = "loading" | "error"
 
@@ -14,7 +14,8 @@ export default function Page({
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
   const msgLanguage = searchParams.language as Language;
-  const msgQuery = searchParams.query as string;
+  const msgType     = searchParams.type as string;
+  const msgQuery    = searchParams.query as string;
 
   const renderComponent = (props: { renderType?: RenderType, renderTag?: React.ReactNode }) => (
     <div className="h-[600px] min-w-[360px] mx-auto pb-[60px] bg-white relative flex flex-col items-center justify-center gap-y-5">
@@ -27,7 +28,7 @@ export default function Page({
   );
 
   // Component type check
-  if (!(typeof msgLanguage == "string") || !(typeof msgQuery == "string")) {
+  if (![msgLanguage, msgType, msgQuery].every(item => typeof item === "string")) {
     return (
       <>
         <Header></Header>
@@ -45,7 +46,7 @@ export default function Page({
   return (
     <>
       <Header></Header>
-      {renderComponent({ renderTag: <Commit msgLanguage={msgLanguage} msgQuery={msgQuery}></Commit> })}
+      {renderComponent({ renderTag: <Commit msgLanguage={msgLanguage} msgType={msgType} msgQuery={msgQuery}></Commit> })}
       <Footer></Footer>
     </>
   );
