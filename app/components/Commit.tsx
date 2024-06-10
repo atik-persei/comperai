@@ -1,5 +1,5 @@
-export default async function Commit(props: {msgType: string, msgQuery: string}) {
-  const { msgType, msgQuery } = props;
+export default async function Commit(props: { msgLanguage: string, msgType: string, msgQuery: string }) {
+  const { msgLanguage, msgType, msgQuery } = props;
 
   async function getQuery() {
     try {
@@ -10,23 +10,16 @@ export default async function Commit(props: {msgType: string, msgQuery: string})
           "Authorization": `Bearer ${process.env.GPT_KEY}`
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [{ "role": "user", "content": `깃 커밋 메시지를 작성해줘
-          과거시제를 사용하면 안되고, 영어로 작성해줘야해
-          이때 커밋 타입을 포함해서 영어 기준 50자를 넘어서는 안돼
-          형태 : ✨ feat: Add Header component
-          
-          메시지 타입에 따른 이모지는 다음과 같아
-          📦️ : package
-          ✨ : feat
-          🐛 : bug
-          ♻️ : refactory
-          🙈 : gitignore
-          🔥 : remove
-          📝 : docs
-          
-          ${msgQuery}` }],
-          temperature: 0.7
+          model: process.env.GPT_MODEL,
+          messages: [
+            {"role": "system", "content": process.env.GPT_SYSTEM },
+            {"role": "user", "content": `language: ${msgLanguage}, type: ${msgType}, query: ${msgQuery}`},
+          ],
+          temperature: 0.1,
+          max_tokens: 200,
+          top_p: 0.5,
+          frequency_penalty: 0,
+          presence_penalty: 0,
         })
       });
 
@@ -34,7 +27,7 @@ export default async function Commit(props: {msgType: string, msgQuery: string})
         // throw new Error(`Failed to fetch data: ${response.statusText}`);
         return { "msg": response.statusText }
       }
-      
+
       return response.json();
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -44,16 +37,13 @@ export default async function Commit(props: {msgType: string, msgQuery: string})
 
   async function Commits() {
     const result: any = await getQuery();
-   
     return (
-      <div className="bg-white">
-        <span>{result.choices ? result.choices[0].message.content : result.msg }</span>
-      </div>
+      <span className="whitespace-pre-line">{result.choices ? result.choices[0].message.content : result.msg}</span>
     )
   }
 
   return (
-    <div className="h-fit min-w-[360px] pb-[60px] bg-white relative mx-auto flex flex-col items-center justify-center gap-y-5">
+    <div className="relative flex flex-col items-center justify-center mx-auto bg-white h-fit min-w-22 pb-14 gap-y-5">
       <Commits />
     </div>
   );
