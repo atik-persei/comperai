@@ -1,6 +1,3 @@
-import { redirect } from "next/navigation";
-import getInputLimit from "@/app/utils/getInputLimit";
-
 export default async function Commit(props: { msgLanguage: string, msgType: string, msgQuery: string }) {
   const { msgLanguage, msgType, msgQuery } = props;
 
@@ -39,12 +36,6 @@ export default async function Commit(props: { msgLanguage: string, msgType: stri
   }
 
   async function Commits() {
-    const inputLimit = getInputLimit();
-    if (msgQuery.length > inputLimit) {
-      redirect("/input-limit");
-    }
-    
-
     const result: any = await getQuery();
     return (
       <span className="whitespace-pre-line">{result.choices ? result.choices[0].message.content : result.msg}</span>
