@@ -90,5 +90,5 @@ We are translating the documentation into multiple languages for user convenienc
 <p align="center">
     <a href="https://github.com/atik-persei/comperai">English</a>
     · 
-    <a href="/docs/README_kr.md">한국어</a>
+    <a href="/app/docs/README_kr.md">한국어</a>
 </p>

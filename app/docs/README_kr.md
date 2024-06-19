@@ -90,5 +90,5 @@ https://<Server ip OR Your ip>
 <p align="center">
     <a href="https://github.com/atik-persei/comperai">English</a>
     · 
-    <a href="/docs/README_kr.md">한국어</a>
+    <a href="/app/docs/README_kr.md">한국어</a>
 </p>
