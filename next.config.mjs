@@ -3,21 +3,27 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrismPlus from "rehype-prism-plus";
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex"
+
+import rehypeFilenamePlugin from "./rehype-filename-plugin.mjs"
+import rehypeTablePlugin from "./rehype-table-plugin.mjs"
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  // Configure `pageExtensions` to include markdown and MDX files
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  // Optionally, add any other Next.js config below
 };
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
       rehypeSlug,
       rehypeAutolinkHeadings,
-      rehypePrismPlus
+      rehypeFilenamePlugin,
+      rehypeTablePlugin,
+      rehypeKatex,
+      rehypePrismPlus,
     ],
   },
 });
