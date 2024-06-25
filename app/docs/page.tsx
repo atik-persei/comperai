@@ -15,7 +15,7 @@ export default async function Page() {
   return (
     <>
       <Header></Header>
-      <Docs contents={contents} structre={structre} sidetype={true}>
+      <Docs contents={{data: contents, show: true}} structre={{data: structre, show: true}}>
         <Comperai></Comperai>
       </Docs>
       <Footer></Footer>
