@@ -15,7 +15,7 @@ export default async function Page() {
   return (
     <>
       <Header></Header>
-      <Docs contents={contents} structre={structre}>
+      <Docs contents={{data: contents, show: true}} structre={{data: structre, show: true}}>
         <Usage></Usage>
       </Docs>
       <Footer></Footer>
