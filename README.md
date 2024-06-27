@@ -18,8 +18,8 @@
 Introducing an open-source Comperai that helps with effective GitHub history management.
 It generates commit messages that adhere to commit style guidelines through ChatGPT.
 Whether you're an individual developer or part of a large team, following unified rules and guidelines can improve code consistency and readability, and enhance collaboration.
-- To get started with the Comperai, visit the [Comperai Introduction](https://comperai.org/docs/getting-started/introduction).
-- To see examples of Comperai results, visit the [Comperai Example](https://comperai.org/docs/getting-started/example).
+- To get started with the Comperai, visit the [Comperai Introduction](https://comperai.org/docs).
+- To see examples of Comperai results, visit the [Comperai Example](https://comperai.org/docs/getting-started/introduction#%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95).
 ㅤ  
 
 ## Documentation

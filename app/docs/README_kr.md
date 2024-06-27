@@ -18,8 +18,8 @@
 효과적인 깃 허브 이력 관리를 돕는 오픈소스 컴퍼레이를 소개합니다.
 ChatGPT를 통해 커밋 스타일 가이드라인을 준수하는 커밋 메시지를 생성합니다.
 개인 개발자이든, 대규모 팀의 일원이든 통일된 규칙과 지침을 따라 코드의 일관성 유지와 가독성을 높이고, 협업 원활성을 증대시킬 수 있습니다.
-- 컴퍼레이를 시작하려면 [컴퍼레이 소개](https://comperai.org/docs/getting-started/introduction) 과정을 방문하세요.
-- 컴퍼레이 결과 예제를 확인하려면  [컴퍼레이 예제](https://comperai.org/docs/getting-started/example) 과정을 방문하세요.
+- 컴퍼레이를 시작하려면 [컴퍼레이 소개](https://comperai.org/docs) 과정을 방문하세요.
+- 컴퍼레이 결과 예제를 확인하려면  [컴퍼레이 예제](https://comperai.org/docs/getting-started/introduction#%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95) 과정을 방문하세요.
 ㅤ  
 
 ## 문서
