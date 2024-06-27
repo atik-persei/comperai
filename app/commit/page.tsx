@@ -19,6 +19,12 @@ export default function Page({
   const msgLanguage = searchParams.language as Language;
   const msgType = searchParams.type as string;
   const msgQuery = searchParams.query as string;
+
+  // 파라미터 유효성 확인
+  if (!msgLanguage || !msgType || !msgQuery) {
+    redirect("/invalid-access");
+    return;
+  }
   
   const inputLimit = getInputLimit();
   if (msgQuery.length > inputLimit) {
