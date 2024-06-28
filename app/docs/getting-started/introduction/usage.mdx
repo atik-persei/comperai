@@ -5,16 +5,15 @@
 ## 사용 방법
 컴퍼레이는 코드를 분석하여 커밋 메시지를 생성하는 AI 웹 사이트입니다.  
 파인튜닝 모델을 이용해 각 줄을 분석하고, 컨벤션에 맞춰 메시지를 생성합니다.  
-<br />
-좋은 결과를 얻기 위해서는 소스코드 혹은 깃 명령어 결과를 입력하는게 좋습니다.
+ㅤ  
+좋은 결과를 얻기 위해서는 소스코드 혹은 깃 명령어 결과를 입력하는게 좋습니다.  
 반환받을 메시지의 언어, 수행한 내용의 커밋 타입, 코드를 작성하고 검색합니다.  
 
 ### 코드 입력
 소스코드를 그대로 입력하여 깃 커밋 메시지를 반환 받을 수 있습니다.  
 파일 이름이 들어있으면 더욱 자세한 메시지 출력이 가능합니다.
 
-###### /app/page.tsx
-```tsx
+```tsx filename="/app/page.tsx"
 export default function Page() {
   return <h1>Hello, Next.js!</h1>
 }
@@ -30,8 +29,7 @@ export default function Page() {
 
 명령어 결과의 자세한 내용은 [깃 문서](https://git-scm.com/docs/git-diff)를 참고하시기 바랍니다.  
 
-###### Terminal
-```ts
+```ts filename="Terminal"
 git diff /app/page.tsx
 
 diff --git a/app/page.tsx b/app/page.tsx
@@ -48,14 +46,13 @@ index ce6b2c7..eaeb973 100644
 ### 결과 출력
 생성된 메시지는 [커밋 컨벤션](/docs/convention/commit-convention)에 맞춰 작성된 결과가 아래의 형태로 구성됩니다.  
 
-###### Terminal
-```js
+```js filename="Terminal"
 <커밋 타입 이모티콘> <커밋 타입>: <커밋 제목>
 
 <커밋 본문>
 ```
 
-<br />
+ㅤ  
 출력된 메시지는 생성형 AI가 만들어낸 문장으로 맹신해서는 안됩니다.  
 잘못된 문법, 용어, 내용이 있을 수 있습니다. 
 확인 후 사용하시는걸 권장드립니다. 
