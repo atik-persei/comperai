@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
-import "./globals.css";
+import "@/app/globals.css";
 
 const noto = Noto_Sans_KR({
-  weight: '400',
-  subsets: ['latin'],
+  weight: "400",
+  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
