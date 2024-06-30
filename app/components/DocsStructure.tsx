@@ -61,7 +61,7 @@ export default function Structure({ structre }: { structre: TreeNode[] }) {
   return (
     <div className="sticky top-24 hidden h-[calc(100vh-6rem)] w-71 md:flex md:shrink-0 md:flex-col md:justify-between">
       <div className="relative overflow-hidden">
-        <nav className="flex flex-col pb-4 pr-2 overflow-y-scroll styled-scrollbar dark:text-white">
+        <nav className="flex flex-col pb-4 pr-2 overflow-y-scroll dark:text-white">
           <div className="absolute top-0 left-0 z-10 w-full h-3 pointer-events-none from-gray-0 bg-gradient-to-b"></div>
           <Recursive structre={structre}></Recursive>
         </nav>

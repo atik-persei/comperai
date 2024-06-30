@@ -42,7 +42,6 @@ export default function Main(props: { message: string, limit: string }) {
   };
 
 
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -63,7 +62,6 @@ export default function Main(props: { message: string, limit: string }) {
       }
     } catch (error) {
       console.error('Fetch error:', error);
-      console.log(error)
       alert('서버 에러가 발생했습니다. 다시 시도해 주세요.1');
     }
   };

@@ -22,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = ({ contents, viewport="lg" }) => {
       <div>
         <div className="text-gray-950 mb-1 mt-[7px] text-sm font-medium">해당 페이지에</div>
         <div className="absolute top-0 left-0 w-full h-3 from-gray-0 z-1 bg-gradient-to-b"></div>
-        <ul className="styled-scrollbar max-h-[70vh] space-y-2.5 overflow-y-auto py-2 text-sm">
+        <ul className="max-h-[70vh] space-y-2.5 overflow-y-auto py-2 text-sm">
           {contents.map((content: Mdx) => {
             return (
               <li key={uuidv4()}>
