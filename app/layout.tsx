@@ -10,7 +10,7 @@ const noto = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: "컴퍼레이",
-  description: "깃 허브 커밋 헬퍼",
+  description: "깃허브 커밋 헬퍼",
 };
 
 export default function RootLayout({
