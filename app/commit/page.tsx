@@ -22,13 +22,13 @@ export default function Page({
 
   // 파라미터 유효성 확인
   if (!msgLanguage || !msgType || !msgQuery) {
-    redirect("/invalid-access");
+    redirect("/error/invalid-access");
     return;
   }
   
   const inputLimit = getInputLimit();
   if (msgQuery.length > inputLimit) {
-    redirect("/input-limit");
+    redirect("/error/input-limit");
     return;
   }
 
