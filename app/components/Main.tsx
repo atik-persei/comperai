@@ -35,6 +35,9 @@ export default function Main(props: { message: string, limit: string }) {
   const limit = props.limit
   const router = useRouter();
 
+  const [language, setLanguage] = useState(commitLanguage[0].language);
+  const [type, setType] = useState(commitType[0].value);
+
   const [queryLength, setQueryLength] = useState(0);
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -86,14 +89,14 @@ export default function Main(props: { message: string, limit: string }) {
 
       <form className="flex flex-col w-full max-w-3xl gap-5 pt-15 bolder" onSubmit={handleSubmit} ref={formRef}>
         <div className="flex items-start w-full max-w-3xl gap-5 bolder">
-          <select className="w-20" name="language">
+          <select className="w-20" name="language" value={language} onChange={(e) => setLanguage(e.target.value)}>
             {commitLanguage.map((item) => {
               return (
                 <option key={uuidv4()} value={item.language}>{item.text}</option>
               )
             })}
           </select>
-          <select className="w-20" name="type">
+          <select className="w-20" name="type" value={type} onChange={(e) => setType(e.target.value)}>
             {commitType.map((item) => {
               return (
                 <option key={uuidv4()} value={item.value}>{item.text}</option>
