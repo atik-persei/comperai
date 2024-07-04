@@ -8,7 +8,7 @@
 </p>
 
 ![Static Badge](https://img.shields.io/badge/vercel-black)
-[![Web Version Badge](https://img.shields.io/badge/web%20version-1.0.0-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
+[![Web Version Badge](https://img.shields.io/badge/web%20version-1.0.1-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
 [![Model Version Badge](https://img.shields.io/badge/model%20version-1.0.0-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fvercel.com&up_message=Up&down_message=down&link=https%3A%2F%2Fcomperai.org)
 

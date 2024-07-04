@@ -8,14 +8,14 @@
 </p>
 
 ![Static Badge](https://img.shields.io/badge/vercel-black)
-[![Web Version Badge](https://img.shields.io/badge/web%20version-1.0.0-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
+[![Web Version Badge](https://img.shields.io/badge/web%20version-1.0.1-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
 [![Model Version Badge](https://img.shields.io/badge/model%20version-1.0.0-blue)](http://localhost:3000/docs/getting-started/project-structure#%EB%AA%A8%EB%8D%B8)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fvercel.com&up_message=Up&down_message=down&link=https%3A%2F%2Fcomperai.org)
 
 ㅤ  
 
 # 📃 시작하기
-효과적인 깃 허브 이력 관리를 돕는 오픈소스 컴퍼레이를 소개합니다.
+효과적인 깃허브 이력 관리를 돕는 오픈소스 컴퍼레이를 소개합니다.
 ChatGPT를 통해 커밋 스타일 가이드라인을 준수하는 커밋 메시지를 생성합니다.
 개인 개발자이든, 대규모 팀의 일원이든 통일된 규칙과 지침을 따라 코드의 일관성 유지와 가독성을 높이고, 협업 원활성을 증대시킬 수 있습니다.
 - 컴퍼레이를 시작하려면 [컴퍼레이 소개](https://comperai.org/docs) 과정을 방문하세요.
