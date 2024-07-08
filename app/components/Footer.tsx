@@ -18,9 +18,6 @@ const navigationSupport = [
   { name: "고객센터", description: "", href: "https://github.com/atik-persei/comperai/issues" },
 ];
 
-const navigationPotal = [
-  { name: "서비스 포탈", description: "", href: "#" },
-];
 
 export default function Footer() {
   return (
@@ -45,18 +42,12 @@ export default function Footer() {
           ) )}
         </div>
 
-        <div className="flex flex-col gap-2">
-          {navigationPotal.map((item, index) => (
-            <CreateArrayLink menu={item} index={index} key={uuidv4()}></CreateArrayLink>
-          ) )}
-        </div>
       </section>
 
       {/* 하단 네비게이션 */}
       <section className="flex flex-row items-center justify-between w-full max-w-4xl text-sm">
         <div className="flex flex-col gap-1">
           <h3 className="text-base font-bold">컴퍼레이 | COMPERAI</h3>
-          <p>서비스 상태에 따라 지연될 수 있습니다.</p>
           <p>ⓒ {new Date().getFullYear()}. COMPERAI. all rights reserved.</p>
         </div>
 
